@@ -1,0 +1,33 @@
+<h1> New Blog </h1>
+<% if can? :create, Blog %>
+  <%= form_for :blog, url: blogs_path do |f| %>
+    <p>
+      <%= f.label :tourist_id %><br>
+      <%= f.text_field :tourist_id %>
+    </p>
+
+    <p>
+      <%= f.label :place_id %><br>
+      <%= f.text_field :place_id %>
+    </p>
+
+    <p>
+      <%= f.label :title %><br>
+      <%= f.text_field :title %>
+    </p>
+   
+    <p>
+      <%= f.label :body %><br>
+      <%= f.text_area :body %>
+    </p>
+
+    <p>
+      <%= f.label :tags %><br>
+      <%= f.text_field :tags %>
+    </p>
+
+    <p>
+      <%= f.submit %>
+    </p>
+  <% end %>
+<% end %>

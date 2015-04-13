@@ -1,0 +1,5 @@
+<h1>My Tripsy</h1>
+<p> Top 3 trending hot-spots</p>
+<% @places.each do |place| %>
+    <p><%= link_to place.name, place_path(place.id) %></p>
+<% end %>

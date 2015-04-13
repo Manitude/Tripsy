@@ -1,0 +1,13 @@
+<h1>Place: <%= @place.name.titleize %></h1>
+<p> State: <%= @place.state.titleize %></p>
+<p> Best season to visit: <%= @place.best_season.to_sentence %></p>
+<p> Coordinates : <%= @place.coordinate.upcase %></p>
+
+<% if can? :create, Blog %>
+  <%= link_to 'Write a Blog', new_blog_path %>
+<% end %>
+
+
+<% @blogs.each do |b| %>
+    <p><%= link_to b.title, blog_path(b.id) %></p>
+<% end %>
